@@ -16,7 +16,8 @@ app.use(express.compress());
 // e.g., http://localhost:3000/index.html
 // maps to /static/index.html on this machine
 app.use(express.static(__dirname + '/static'));
-
+var distDir = __dirname + "/dist/";
+ app.use(express.static(distDir));
 // Start the server
 var port = process.env.PORT || PORT; // 80 for web, 3000 for development
 app.listen(port, function() {
